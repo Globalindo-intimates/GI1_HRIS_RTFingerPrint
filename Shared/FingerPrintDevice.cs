@@ -69,7 +69,8 @@ namespace Shared {
          var byteContent = new ByteArrayContent(buffer);
          byteContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
          using HttpClient client = new HttpClient();
-         var response = await client.PostAsync("https://localhost:7020/api/AttandenceLog", byteContent);
+         //var response = await client.PostAsync("https://localhost:7020/api/AttandenceLog", byteContent);
+         var response = await client.PostAsync("http://192.168.10.3/api/AttandenceLog", byteContent);
          Console.WriteLine($"response1: {response.StatusCode}");
 
 
