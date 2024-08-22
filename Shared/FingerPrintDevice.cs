@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using zkemkeeper;
@@ -70,6 +71,8 @@ namespace Shared {
          byteContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
          using HttpClient client = new HttpClient();
          //var response = await client.PostAsync("https://localhost:7020/api/AttandenceLog", byteContent);
+         client.DefaultRequestHeaders.Accept.Clear();
+         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
          var response = await client.PostAsync("http://192.168.10.3/api/AttandenceLog", byteContent);
          Console.WriteLine($"response1: {response.StatusCode}");
 
