@@ -73,8 +73,9 @@ namespace Shared {
          //var response = await client.PostAsync("https://localhost:7020/api/AttandenceLog", byteContent);
          client.DefaultRequestHeaders.Accept.Clear();
          client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-         var response = await client.PostAsync("http://192.168.10.3/api/AttandenceLog", byteContent);
-         Console.WriteLine($"response1: {response.StatusCode}");
+         //var response = await client.PostAsync("http://192.168.10.3:5000/api/AttandenceLog", byteContent);
+			var response = await client.PostAsync("http://localhost:5000/api/AttandenceLog", byteContent);
+			Console.WriteLine($"response1: {response.StatusCode}");
 
 
       }

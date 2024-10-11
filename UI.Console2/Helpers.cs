@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace UI.Console2 {
@@ -15,10 +16,14 @@ namespace UI.Console2 {
          //var response = await client.GetAsync("https://localhost:7020/api/MesinAbsens");
          client.DefaultRequestHeaders.Accept.Clear();
          client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-         var response = await client.GetAsync("http://192.168.10.3/api/MesinAbsens");
-         var result = await response.Content.ReadFromJsonAsync<List<MesinAbsenDTO>>();
-         //List<MesinAbsenDTO>? mesinAbsenDTOs = JsonConvert.DeserializeObject<List<MesinAbsenDTO>>(result);
-         return result!;
+         //var response = await client.GetAsync("http://192.168.10.3/api/MesinAbsens");
+			var response = await client.GetAsync("http://localhost:5000/api/MesinAbsens");
+			//var result = await response.Content.ReadFromJsonAsync<List<MesinAbsenDTO>>();
+			var json = await response.Content.ReadAsStringAsync();
+         var result = JsonConvert.DeserializeObject<List<MesinAbsenDTO>>(json);
+
+			//List<MesinAbsenDTO>? mesinAbsenDTOs = JsonConvert.DeserializeObject<List<MesinAbsenDTO>>(result);
+			return result!;
       }
    }
 }

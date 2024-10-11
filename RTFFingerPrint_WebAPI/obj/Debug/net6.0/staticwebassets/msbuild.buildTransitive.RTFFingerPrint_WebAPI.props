@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\RTFFingerPrint_WebAPI.props" />
+</Project>

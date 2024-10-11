@@ -10,7 +10,7 @@ namespace RTFFingerPrint_WebAPI.Services {
          this.dbContextClass = dbContextClass;
       }
       public async Task<AttandenceLogDTO> AddNewLog(AttandenceLogDTO attandenceLogDTO) {
-         var result = await dbContextClass.AttandenceLog.AddAsync(attandenceLogDTO.ConvertToModel());
+         var result = await dbContextClass.attandenceLog.AddAsync(attandenceLogDTO.ConvertToModel());
          await dbContextClass.SaveChangesAsync();
 
          return result.Entity.ConvertToDTO();

@@ -11,7 +11,7 @@ namespace RTFFingerPrint_WebAPI.Services {
          this.dbContextClass = dbContextClass;
       }
       public async Task<List<MesinAbsenDTO>> GetAllMesinAbsen() {
-         var mesinAbsens = await this.dbContextClass.MesinAbsen.ToListAsync();
+         var mesinAbsens = await this.dbContextClass.mesinabsen.ToListAsync();
 
          return mesinAbsens.ConvertToDTO();
       }

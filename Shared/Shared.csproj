@@ -8,19 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <COMReference Include="zkemkeeper">
-      <WrapperTool>tlbimp</WrapperTool>
-      <VersionMinor>0</VersionMinor>
-      <VersionMajor>1</VersionMajor>
-      <Guid>fe9ded34-e159-408e-8490-b720a5e632c7</Guid>
-      <Lcid>0</Lcid>
-      <Isolated>false</Isolated>
-      <EmbedInteropTypes>true</EmbedInteropTypes>
-    </COMReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <Reference Include="Interop.zkemkeeper">
+      <HintPath>..\..\Master\Fingerprint_X100-C_SDK\NEW SDK Colour\NEW SDK Colour\SDK 64 Bit\Communication Protocol SDK(64Bit Ver6.2.3.9)\Demo\C#\TFT_x64\RTEvents\obj\Release\Interop.zkemkeeper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
 
 </Project>
